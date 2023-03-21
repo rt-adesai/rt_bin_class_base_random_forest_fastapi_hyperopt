@@ -6,6 +6,7 @@ import os
 import sys
 import traceback
 import warnings
+from typing import List
 
 import pandas as pd
 from fastapi import Body, FastAPI
@@ -47,7 +48,7 @@ async def ping() -> dict:
 
 
 @app.post("/infer", tags=["inference"])
-async def infer(instances: list[dict] = Body(embed=True)) -> dict:
+async def infer(instances: List[dict] = Body(embed=True)) -> dict:
     """Do an inference on a single batch of data. In this sample server, we take data as CSV, convert
     it to a pandas data frame for internal use and then convert the predictions back to CSV (which really
     just means one prediction per line, since there's a single column.

@@ -1,7 +1,0 @@
-pandas
-scikit-learn
-feature-engine
-hyperopt
-python-multipart
-fastapi
-uvicorn[standard]
